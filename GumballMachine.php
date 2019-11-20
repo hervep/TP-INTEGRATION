@@ -10,7 +10,7 @@ class GumballMachine
 	private $servername="localhost";
 	private $db_name="mydb8"; //a remplir
 	private $db_user="myuser8"; //a remplir
-	private $db_pass="mypassword8"; //a remplir
+	private $db_pass="mypassword"; //a remplir
 	
 	
 	function __construct()
@@ -121,6 +121,22 @@ class GumballMachine
 	    }
 	    
 	}
+
+	public function GetIdC($intitule,$duree)
+    	{
+    	    $stmt = $this->bdd->prepare("select id from cours where intitule=? and duree=?");
+    	    $stmt->execute([$intitule,$duree]);
+    	    $user = $stmt->fetch();
+    	    return $user['id'];
+    	}
+
+    public function GetLastIDC()
+        {
+            $stmt = $this->bdd->prepare("select max(id) as maximum from cours");
+            $stmt->execute();
+            $user = $stmt->fetch();
+            return $user['maximum'];
+        }
 	
 	public function UpdateP()
 	{
