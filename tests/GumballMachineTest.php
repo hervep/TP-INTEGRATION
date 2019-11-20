@@ -73,7 +73,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
 
 
-    public function testDeletep()
+    public function testDeletep()S
     {
         $this->assertEquals(true,$this->gumballMachineInstance->DeleteP("BoBo"));
     }
