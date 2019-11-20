@@ -57,7 +57,7 @@ class GumballMachine
             try
             {
                $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-               $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
+               $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('nom','prenom', 'date_naissance','lieu')";
                 $this->bdd->exec($sql);
                return true;
             }
