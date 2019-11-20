@@ -53,22 +53,19 @@ class GumballMachine
 	    print("\n".$etat."\n");
 	    $stmt = $this->bdd->prepare("select * from cours");
 	    $stmt->execute();
-	    while($row = $stmt->fetch())
-	    {{
-	    try
-	    {
-	       $this->$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	       $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
-	       $bdd->exec($sql);
-	       return true;
-	    }
-	    catch(PDOException $e)
-	    {
-	        echo $sql . "<br>" . $e->getMessage();
-	        return false;
-	    }
-
-	}
+	    while($row = $stmt->fetch()) {
+            try
+            {
+               $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+               $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
+                $this->bdd->exec($sql);
+               return true;
+            }
+            catch(PDOException $e)
+            {
+                echo $sql . "<br>" . $e->getMessage();
+                return false;
+            }
 	        echo "* id: " . $row["id"]. " Name: " . $row["intitule"]. " Time: " . $row["duree"]. " Id Prof: " . $row["id_prof"] ."\n";
 	    }
 	    return true;
