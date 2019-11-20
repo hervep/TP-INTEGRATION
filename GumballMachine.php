@@ -6,11 +6,11 @@ class GumballMachine
 	private $gumballs;
 	
 	private $bdd;
-	/* Paramètre de connexion à la base de données*/
+	/* Paramï¿½tre de connexion ï¿½ la base de donnï¿½es*/
 	private $servername="localhost";
-	private $db_name="mydb1"; //a remplir
-	private $db_user="myuser1"; //a remplir
-	private $db_pass="mypassword1"; //a remplir
+	private $db_name="mydb8"; //a remplir
+	private $db_user="myuser8"; //a remplir
+	private $db_pass="mypassword8"; //a remplir
 	
 	
 	function __construct()
@@ -54,7 +54,21 @@ class GumballMachine
 	    $stmt = $this->bdd->prepare("select * from cours");
 	    $stmt->execute();
 	    while($row = $stmt->fetch())
+	    {{
+	    try
 	    {
+	       $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	       $sql = "INSERT INTO prof (nom, prenom, date_naissance, lieu_naissance) VALUES ('$nom','$prenom', '$date_naissance','$lieu')";
+	       $bdd->exec($sql);
+	       return true;
+	    }
+	    catch(PDOException $e)
+	    {
+	        echo $sql . "<br>" . $e->getMessage();
+	        return false;
+	    }
+
+	}
 	        echo "* id: " . $row["id"]. " Name: " . $row["intitule"]. " Time: " . $row["duree"]. " Id Prof: " . $row["id_prof"] ."\n";
 	    }
 	    return true;
