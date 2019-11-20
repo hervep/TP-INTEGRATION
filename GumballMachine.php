@@ -134,11 +134,37 @@ class GumballMachine
             $user = $stmt->fetch();
             return $user['maximum'];
         }
-	
-	public function UpdateP()
-	{
-	    
-	}
+
+    public function UpdateP($oldName, $newName)
+    {
+        try{
+            $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "UPDATE prof SET nom='$newName' WHERE nom='$oldName'";
+            $this->bdd->exec($sql);
+            return true;
+        }
+        catch(PDOException $e)
+        {
+            echo $sql . "<br>" . $e->getMessage();
+            return false;
+        }
+
+    }
+    public function UpdateC($temps, $intitule)
+    {
+        try{
+            $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "UPDATE cours SET duree='$temps' WHERE intitule='$intitule'";
+            $this->bdd->exec($sql);
+            return true;
+        }
+        catch(PDOException $e)
+        {
+            echo $sql . "<br>" . $e->getMessage();
+            return false;
+        }
+
+    }
 	
 	public function DeleteP()
 	{

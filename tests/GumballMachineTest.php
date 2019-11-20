@@ -67,5 +67,16 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
          $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Behin Insertion of Professors"));
     }
 
-   
+    public function testUpdatec()
+    {
+        $this->assertEquals(true,$this->gumballMachineInstance->UpdateC(30,IOT));
+    }
+
+    public function testUpdatep()
+    {
+        $this->assertEquals(true,$this->gumballMachineInstance->Updat("XXX2","Bobo"));
+    }
+
+
+
 }
