@@ -64,7 +64,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testAffichageCoursAPI()
     {
-        /*� completer*/
+         $this->assertContains("good job",$this->gumballMachineInstance->AffichageCours("Behin Insertion of Professors"));
     }
 
    
