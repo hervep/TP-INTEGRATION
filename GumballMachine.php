@@ -10,7 +10,7 @@ class GumballMachine
 	private $servername="localhost";
 	private $db_name="mydb8"; //a remplir
 	private $db_user="myuser8"; //a remplir
-	private $db_pass="mypassword"; //a remplir
+	private $db_pass="mypassword8"; //a remplir
 	
 	
 	function __construct()
