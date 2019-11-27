@@ -170,11 +170,11 @@ class GumballMachine
         }
 	}
 
-    public function DeleteC($intitule)
+    public function DeleteC($id)
     {
         try{
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $sql = " DELETE from cours WHERE intitule='$intitule'";
+            $sql = " DELETE from cours WHERE id='$id'";
             $this->bdd->exec($sql);
             return true;
         }
