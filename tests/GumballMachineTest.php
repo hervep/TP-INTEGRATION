@@ -53,12 +53,12 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testInsertC()
     {
-       $max__id1=$this->gumballMachineInstance->GetLastIDC();
+       $max__id3=$this->gumballMachineInstance->GetLastIDC();
        $this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule,$this->duree,$this->gumballMachineInstance->GetIdP("XXX2" ,"YYY2")));
        #$this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule1,$this->duree1,$this->gumballMachineInstance->GetIdP("XX1" ,"YYY1")));
        #$this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule2,$this->duree2,$this->gumballMachineInstance->GetIdP("XXX3" ,"YYY3")));
-       $max__id2=$this->gumballMachineInstance->GetLastIDC();
-       $this->assertEquals($max__id1+1,$max__id2);
+       $max__id4 = $this->gumballMachineInstance->GetLastIDC();
+       $this->assertEquals($max__id3+1,$max__id4);
 
         
     }
@@ -69,7 +69,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 
     public function testUpdatec()
     {
-        $this->assertEquals(true,$this->gumballMachineInstance->UpdateC(20,"IOT"));
+        $this->assertEquals(true,$this->gumballMachineInstance->UpdateC(30,"IOT"));
     }
 
 
