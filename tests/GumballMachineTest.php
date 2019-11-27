@@ -6,8 +6,8 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
 {
     public $gumballMachineInstance;
     //prof
-    private $nom="xx1"; // a changer
-    private $prenom="yy1"; // a changer
+    private $nom="test12"; // a changer
+    private $prenom="test13"; // a changer
     private $date_naissance="29-09-1980"; // a changer
     private $lieu_naissance="ZZZ1"; // a changer
 
@@ -54,7 +54,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     public function testInsertC()
     {
        $max__id3=$this->gumballMachineInstance->GetLastIDC();
-       $this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule,$this->duree,$this->gumballMachineInstance->GetIdP("XXX2" ,"YYY2")));
+       $this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule,$this->duree,$this->gumballMachineInstance->GetIdP("test12" ,"test13")));
        #$this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule1,$this->duree1,$this->gumballMachineInstance->GetIdP("XX1" ,"YYY1")));
        #$this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule2,$this->duree2,$this->gumballMachineInstance->GetIdP("XXX3" ,"YYY3")));
        $max__id4 = $this->gumballMachineInstance->GetLastIDC();
