@@ -55,7 +55,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     {
        $max__id3 = $this->gumballMachineInstance->GetLastIDC();
        $this->assertContains("good job",$this->gumballMachineInstance->InsertC("JAVA",$this->duree,$this->gumballMachineInstance->GetIdP("test12" ,"test13")));
-       $this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule,$this->duree1,$this->gumballMachineInstance->GetIdP("XX1" ,"YYY1")));
+       $this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule,$this->duree1,$this->gumballMachineInstance->GetIdP("XXX2" ,"YYY2")));
        #$this->assertContains("good job",$this->gumballMachineInstance->InsertC($this->intitule2,$this->duree2,$this->gumballMachineInstance->GetIdP("XXX3" ,"YYY3")));
        $max__id4 = $this->gumballMachineInstance->GetLastIDC();
        print("id3 ".$max__id3);
