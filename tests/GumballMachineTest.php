@@ -43,13 +43,13 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testAffichageProfAPI()
     {
-        /*� completer*/
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageProf("after Insertion of Professors"));
     }
      
     
     public function testAffichageCoursAVI()
     {
-        /*� completer*/
+        $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Before Insertion of courses"));
     }
     public function testInsertC()
     {
@@ -66,7 +66,7 @@ class GumballMachineTest extends PHPUnit_Framework_TestCase
     }
     public function testAffichageCoursAPI()
    {
-         $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("Behin Insertion of cours"));
+         $this->assertEquals(true,$this->gumballMachineInstance->AffichageCours("after Insertion of courses"));
     }
 
     public function testUpdatec()
